@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+        body{font: normal 1em arial;}
+        h1 { font: normal 2em 'Pacifico' }
+        button{padding: 30px;
+                font: normal 1em arial;}
+       
+        
+    </style>
+</head>
+<body>
+    <h1>Gerador de números</h1>
+    <button onclick="clicou()">Clique em mim</button>
+    <button onclick="limpou()">Limpar</button>
+    <p>Cada vez que você apertar o botão acima, eu penso em um número entre 1 e 100.</p>
+    <section id="resul">
+
+        
+    </section>
+        
+    <script>         
+        function clicou(){   
+            let res = document.getElementById("resul")         
+            let max = 100
+            let min = 1
+            let dif = max - min + 1
+            let aleatorio = Math.random()  
+            let num = (min + Math.trunc(dif * aleatorio) )          
+            
+            res.innerHTML += `<p> Acabei de pensar no número <mark>${num}!</mark></p>`
+        }
+
+        function limpou(){
+            res.innerHTML = ""
+        }
+    </script>
+</body>
+</html>

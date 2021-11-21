@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+        body{font: normal 1em arial;}
+        h1 { font: normal 2em 'Pacifico' }
+        button{padding: 30px;
+                font: normal 1em arial;}
+       
+        
+    </style>
+</head>
+<body>
+    <h1>É par ou é ímpar?</h1>
+    <button onclick="clicou()">Clique para iniciar</button>
+    <section id="resul">
+
+    </section>
+
+    <script>
+        function clicou(){
+            let num = Number(window.prompt("Digite um número"))
+            let res = document.getElementById("resul")
+            let defini
+            if (num % 2 == 0)  {
+                defini = `<strong>PAR!</strong>`
+            } else {
+                defini = `<strong>ÍMPAR</strong>`
+            }
+            if (Number.isInteger(num) == false){
+            res.innerHTML = `<p>O número <strong>${num}</strong> não é inteiro. Não há definição de par ou ímpar</p>`
+            }   else {
+                res.innerHTML = `<p>O número ${num} que foi digitado é ${defini}</p>`
+            }
+        }
+      
+    </script>
+</body>
+</html>

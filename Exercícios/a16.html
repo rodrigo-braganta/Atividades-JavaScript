@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+        body{font: normal 1em arial;}
+        h1 { font: normal 2em 'Pacifico' }
+        button{padding: 30px;
+                font: normal 1em arial;}
+       
+        
+    </style>
+</head>
+<body>
+    <h1>Calculando a idade</h1>
+    <button onclick="clicou()">Iniciar</button>
+    <section id="resul">
+
+    </section>
+
+    <script>
+        function clicou(){
+            let nasci = Number(window.prompt("Em que ano você nasceu?"))
+            let res = document.getElementById("resul")
+            let agora = new Date()
+            let ano = Number(agora.getFullYear())
+
+            res.innerHTML = `<p>Quem nasceu em ${nasci} vai completar <strong>${ano-nasci}</strong> anos em ${ano}.</p>`
+
+        }
+    </script>
+</body>
+</html>

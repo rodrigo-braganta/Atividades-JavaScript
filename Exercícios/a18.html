@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+        body{font: normal 1em arial;}
+        h1 { font: normal 2em 'Pacifico' }
+        button{padding: 30px;
+                font: normal 1em arial;}
+    </style>
+</head>
+<body>
+    <h1>Tente adivinhar meu número</h1>
+    
+        <button id="finalizar" onclick="clicou()">Tentar adivinhar</button>
+    
+    <Section id="resul">
+        <p>Já pensei em um valor entre 1 e 100...</p>
+    </Section>
+
+    <script>
+        let min = 1 
+        let max = 100
+        let dif = max-min+1
+        let aleatorio = Math.random()
+        let computador = min + Math.trunc(aleatorio*dif)
+        let res = document.getElementById("resul")
+
+        function clicou(){
+            let resposta = Number(window.prompt("Qual é o seu palpite?"))
+
+            if (computador > resposta){
+                res.innerHTML += `<p>Você falou ${resposta} Meu número é <strong>MAIOR!</strong></p>`
+            } else if (computador < resposta) {
+                res.innerHTML += `<p>Você falou ${resposta} Meu número é <strong>MENOR!</strong></p>`
+            } else {
+                res.innerHTML += `<p><strong>PARABÉNS!</strong> Você acertou! Eu tinha sorteado o valor <strong>${computador}!</strong></p>` 
+                
+                document.getElementById("finalizar").style.visibility='hidden'
+
+                
+            }
+
+        }
+    </script>
+</body>
+</html>
