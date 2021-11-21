@@ -5,8 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+        body{font: normal 1em arial;}
+        h1 { font: normal 2em 'Pacifico' }
+        button{padding: 30px;
+                font: normal 1em arial;}
+       
+        
+    </style>
 </head>
 <body>
-    
+    <h1>Descubra a estação do ano</h1>
+    <button onclick="clicou()">Informe o mês aqui</button>
+    <section id="resul">
+        <p>Clique no botão acima para informar o mês.</p>
+    </section>
+
+    <script>
+        function clicou(){
+          let mes = String(window.prompt("Digite o mês em extenso (ex: Setembro"))  
+          let res = document.getElementById("resul")
+
+          if (mes.toUpperCase() == "ABRIL" || mes.toUpperCase() == "MAIO" || mes.toUpperCase() == "JUNHO"){
+              res.innerHTML = `<p>No mês de <mark>${mes}</mark>, estamos na estação <mark><strong>OUTONO!</strong></mark></p>`
+          } else if (mes.toUpperCase() == "JULHO" || mes.toUpperCase() == "AGOSTO" || mes.toUpperCase() == "SETEMBRO"){
+              res.innerHTML = `<p>No mês de   <mark>${mes}</mark>, estamos na estação <mark><strong>INVERNO!</strong></mark></p>`
+          } else if (mes.toUpperCase() == "OUTUBRO" || mes.toUpperCase() == "NOVEMBRO" ||mes.toUpperCase() ==  "DEZEMBRO") {
+            res.innerHTML = `<p>No mês de   <mark>${mes}</mark>, estamos na estação <mark><strong>PRIMAVERA!</strong></mark></p>`
+          } else if (mes.toUpperCase() == "FEVEREIRO" || mes.toUpperCase() == "JANEIRO" ||mes.toUpperCase() ==  "MARÇO"){
+            res.innerHTML = `<p>No mês de   <mark>${mes}</mark>, estamos na estação <mark><strong>VERÃO!</strong></mark></p>`
+          } else { 
+            res.innerHTML = `<p>No mês de   <mark>${mes}</mark>, estamos na estação <mark><strong>INDEFINIDA!</strong></mark></p>`
+          }
+
+          }
+        
+    </script>
 </body>
 </html>
