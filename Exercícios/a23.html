@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+        body{font: normal 1em arial;}
+        h1 { font: normal 2em 'Pacifico' }
+        h2 { font: normal 1.5em 'Pacifico' }
+        button{padding: 30px;
+                font: normal 1em arial;}
+    </style>
+</head>
+<body>
+    <h1>Contando de 1 a 10 (mostrando só os pares)</h1>
+    <button onclick="contar()">Contar de 1 a 10</button>
+    <section id="resul">
+        <p>Aperte o botão acima para contar</p>
+    </section>
+
+    <script>
+        function contar(){
+            let res = document.getElementById("resul")
+            res.innerHTML += `<h2>Números pares de 1 até 10</h2>`
+            for (let c = 1;c <= 10; c++){
+                if(c % 2 == 0){
+                    res.innerHTML += ` ${c} 👉 `
+                }
+            }
+            res.innerHTML += `🏁`
+        }
+    </script>
+</body>
+</html>

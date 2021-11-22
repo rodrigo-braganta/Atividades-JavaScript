@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+        body{font: normal 1em arial;}
+        h1 { font: normal 2em 'Pacifico' }
+        h2 { font: normal 1.5em 'Pacifico' }
+        input[type=number] { font-size: 1em }
+        button{padding: 5px;
+                font: normal 1em arial;
+            color: white;
+            background-color: green;
+        }
+       
+        
+    </style>
+</head>
+<body>
+    <h1>Contando de 0 até um número positivo qualquer</h1>
+    <section>
+        <p>Escolha o limite final para a contagem a partir do 0 (digite apenas números positivos)</p>
+        <p>Valor final: <input type="number" name="limite" id="limite"  placeholder="Apenas positivos">  
+        <button onclick="contar()">Contar</button>
+        </p>
+    </section>
+    <section id="resul">
+        <p>Preencha os dados acima e aperte o botão.</p>
+    </section>
+
+    <script>
+        function contar(){
+        let limi = Number(document.getElementById("limite").value)
+        let res = document.getElementById("resul")
+        res.innerHTML += `<h2>Contando de 0 até ${limi}</h2>`
+
+        for(let c = 0; c <= limi; c++){
+            res.innerHTML += `${c} 👉 `
+        }
+        res.innerHTML += '🏁'
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+        body{font: normal 1em arial;}
+        h1 { font: normal 2em 'Pacifico' }
+        h2 { font: normal 1.5em 'Pacifico' }
+        input[type=number] { font-size: 1em;
+        width: 70px;}
+        button{padding: 5px;
+                font: normal 1em arial;
+            color: white;
+            background-color: green;
+        }       
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Cálculo de Fatorial</h1>
+        <p>Escreva um número (entre 1 e 21) na caixa a seguir e te mostrarei o Fatorial dele.</p>
+
+        
+            <p>
+                <label for="fatorial">Número:</label>
+                <input type="number" name="num" id="num" placeholder="Número entre 1 e 21" min="1" max="21">
+                <button onclick="clicou()">Fatorial</button>
+            </p>
+
+        <section id="resul">
+            <p>Preencha os dados acima e aperte o botão.</p>
+        </section>
+
+        <script>
+            function clicou(){
+                let n1 = Number(document.getElementById("num").value)
+                let res = document.getElementById("resul")
+                let total = n1
+
+                res.innerHTML += `<h2>Calculando ${n1}!</h2>`
+                for(let c = n1;c >= 1; c--){
+                    if (c > 1){
+                        res.innerHTML += `${c} x `
+                    total = (total * (c-1))
+                    } else {
+                        res.innerHTML += `${c} `
+                    }
+                }
+                res.innerHTML += `= <strong>${total}</strong>`
+            }
+        </script>
+    </body>
+    </html>
+</body>
+</html>

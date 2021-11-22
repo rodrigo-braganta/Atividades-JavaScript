@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+        body{font: normal 1em arial;}
+        h1 { font: normal 2em 'Pacifico' }
+        h2 { font: normal 1.5em 'Pacifico' }
+        input[type=number] { font-size: 1em }
+        button{padding: 5px;
+                font: normal 1em arial;
+            color: white;
+            background-color: green;
+        }
+       
+        
+    </style>
+</head>
+<body>
+    <h1>Contagem "inteligente"</h1>
+    <section>
+        <p>Use qualquer valor nas caixas, simule contagens crescentes e regressivas. Use também valores negativos.</p>
+        <p>Valor inicial: <input type="number" name="inicial" id="inicial" placeholder="Início da contagem"></p>
+        <p>Valor final: <input type="number" name="fim" id="fim" placeholder="Fim da contagem"></p>
+        <p><button onclick="contar()">Contar</button></p>
+    </section>
+
+    <section id="resul">
+        <p>Preencha os dados acima e aperte o botão.</p>
+    </section>
+
+    <script>
+        function contar(){
+            let inicio = Number(document.getElementById("inicial").value)
+            let fim = Number(document.getElementById("fim").value)
+            let res = document.getElementById("resul")
+            res.innerHTML += `<h2>Contando de ${inicio} até ${fim}</h2>`
+            
+            if (inicio < fim){
+                for(let c = inicio;c <= fim; c++){
+                    res.innerHTML += `${c} 👉 `
+                }                
+            } else if(inicio > fim){
+                for (let c = inicio; c >= fim; c--){
+                    res.innerHTML += `${c} 👉 `
+                }
+            } else {
+                res.innerHTML += `Não é possível contar, pois os números são iguais.`
+            }
+            res.innerHTML += `🏁`
+        }
+    </script>
+</body>
+</html>
