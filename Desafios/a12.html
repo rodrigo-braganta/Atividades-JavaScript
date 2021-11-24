@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 12</title>
+    <style>
+        body{font-family: Arial, Helvetica, sans-serif}
+        button{padding: 30px;
+        font: normal 1em arial;}
+        #eBissexto{
+            background-color: lightgreen;
+            color: rgb(59, 59, 59);
+        }
+        #nBissexto{
+            background-color: rgb(228, 133, 133);
+            color: rgb(59, 59, 59);
+        }
+    </style>
+</head>
+<body>
+    <h1>Preço mudou</h1>    
+    <button onclick="verificar()">Verificar</button>
+    <section id="resul">
+        <p>Clique no botão acima para analisar a mudança de preço.</p> 
+    </section>
+    
+
+    <script>
+        
+        function verificar(){   
+            let res = document.getElementById("resul")
+
+            let precoAnterior = Number(window.prompt("Qual é o preço anterior do produto?"))
+            
+            let precoAtual = Number(window.prompt("Qual é o preço atual do produto?"))   
+            
+            let diferencaPercentual 
+
+            res.innerHTML = `<h2>Analisando os valores</h2>`
+
+            if (precoAnterior < precoAtual){
+                diferencaPercentual = ((precoAtual / precoAnterior) - 1) * 100
+
+                res.innerHTML += `<p>O produto custava ${precoAnterior.toLocaleString('pt-BR', {style: 'currency', currency: "BRL"})} e agora custa ${precoAtual.toLocaleString('pt-BR', {style: 'currency', currency: "BRL"})}.</p>`
+
+                res.innerHTML += `<p>Hoje o produto está mais caro</p>`
+
+                res.innerHTML += `<p>O preço subiu ${(precoAtual-precoAnterior).toLocaleString('pt-BR', {style: 'currency', currency: "BRL"})} em relação ao preço anterior.</p>`
+
+                res.innerHTML += `<p>Uma variação de  ${diferencaPercentual.toFixed(2)}% pra cima.</p>`
+            } else if (precoAnterior > precoAtual) {
+            diferencaPercentual = (( precoAnterior / precoAtual) - 1) * 100
+
+            res.innerHTML += `<p>O produto custava ${precoAnterior.toLocaleString('pt-BR', {style: 'currency', currency: "BRL"})} e agora custa ${precoAtual.toLocaleString('pt-BR', {style: 'currency', currency: "BRL"})}.</p>`
+
+            res.innerHTML += `<p>Hoje o produto está mais barato</p>`
+
+            res.innerHTML += `<p>O preço caiu ${(precoAnterior-precoAtual).toLocaleString('pt-BR', {style: 'currency', currency: "BRL"})} em relação ao preço anterior.</p>`
+
+            res.innerHTML += `<p>Uma variação de  ${diferencaPercentual.toFixed(2)}% pra baixo.</p>`
+            } else {
+                res.innerHTML += `<p>Os preços são iguais, não houve variação.</p>`
+            }
+
+        }
+    </script>
+</body>
+</html>
